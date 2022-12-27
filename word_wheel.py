@@ -56,14 +56,9 @@ def main():
     NUM_WHEEL_LETTERS = len(ring[0])
 
     last_word = ""
-    try:
-        for i in range(NUM_RINGS):
-            # Get the last letter of each ring to make ending word
-            last_word += ring[i][len(ring[i])-1]
-
-    except IndexError:
-        print(f"IndexError: {i=} is too long")
-        return
+    for i in range(NUM_RINGS):
+        # Get the last letter of each ring to make ending word
+        last_word += ring[i][len(ring[i])-1]
 
     GenerateStrings(ring, NUM_RINGS, NUM_WHEEL_LETTERS, last_word)
 
